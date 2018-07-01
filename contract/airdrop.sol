@@ -41,7 +41,7 @@ contract AirDrop is Ownable {
         require(total <= 256);
         
         for (uint8 i = 0; i < _to.length; i++) {
-            assert((ERC20(_tokenAddr)).transfer(_to[i], _value[i]));
+            require((ERC20(_tokenAddr)).transfer(_to[i], _value[i]));
         }
         return true;
     }
